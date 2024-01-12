@@ -1,0 +1,3 @@
+wan|1|False|10
+too|2|False|200
+TREE|3|False|100
