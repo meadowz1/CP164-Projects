@@ -1,0 +1,112 @@
+"""
+-------------------------------------------------------
+Testing
+-------------------------------------------------------
+Author:  Mike Bangar
+ID:      169073786
+Email:   bang3786@mylaurier.ca
+Version: 2024-01-18
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+
+Is the stack empty?  True
+Is the stack empty after pushing elements?  False
+Top element (peek):  30
+Popped element:  30
+New top element after popping:  20
+Elements in the stack from top to bottom:
+20
+10
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t02
+
+Source array before transferring to stack: [1, 2, 3, 4, 5]
+Source array after transferring to stack: []
+Elements in the stack from top to bottom:
+1
+2
+3
+4
+5
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t03
+
+Is the stack empty after transferring to array?  True
+Elements in the target array: [1, 2, 3, 4, 5]
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t04 
+
+Pop on empty stack correctly raised an exception.
+Peek on empty stack correctly raised an exception.
+Pushed 50 onto the stack. Top of stack is now: 50
+Pushed 40 onto the stack. Top of stack is now: 40
+Pushed 30 onto the stack. Top of stack is now: 30
+Pushed 20 onto the stack. Top of stack is now: 20
+Pushed 10 onto the stack. Top of stack is now: 10
+Test is_empty after pushing: False
+Popped 10 from the stack.
+Popped 20 from the stack.
+Popped 30 from the stack.
+Popped 40 from the stack.
+Popped 50 from the stack.
+Test is_empty after popping all items: True
+
+Testing with an empty source list:
+Pop on empty stack correctly raised an exception.
+Peek on empty stack correctly raised an exception.
+Test is_empty after pushing: True
+Test is_empty after popping all items: True
+
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t05
+
+Pop on empty stack correctly raised an exception.
+Peek on empty stack correctly raised an exception.
+Pushed Name: Chicken Wings
+Origin: American
+Vegetarian: False
+Calories: 298 onto the stack. Top of stack is now: Name: Chicken Wings
+Origin: American
+Vegetarian: False
+Calories: 298
+Pushed Name: Chicken Chow Mein
+Origin: Chinese
+Vegetarian: False
+Calories: 178 onto the stack. Top of stack is now: Name: Chicken Chow Mein
+Origin: Chinese
+Vegetarian: False
+Calories: 178
+Pushed Name: Spring Rolls
+Origin: Chinese
+Vegetarian: True
+Calories: 200 onto the stack. Top of stack is now: Name: Spring Rolls
+Origin: Chinese
+Vegetarian: True
+Calories: 200
+Pushed Name: Panzerotti
+...
+Popped Name: Chicken Chow Mein
+Origin: Chinese
+Vegetarian: False
+Calories: 178 from the stack.
+Popped Name: Chicken Wings
+Origin: American
+Vegetarian: False
+Calories: 298 from the stack.
+Test is_empty after popping all items: True
+
+-------------------------------------------------------
