@@ -147,10 +147,15 @@ def by_origin(foods, origin):
         origins - Food objects from foods that are of a particular origin (list of Food)
     -------------------------------------------------------
     """
+    
     assert origin in range(len(Food.ORIGIN))
+    
+    origins = []
 
-
-    # Your code here
+    for food in foods:
+        
+        if food.origin == origin:
+            origins.append(food)
 
     return origins
 
@@ -169,8 +174,19 @@ def average_calories(foods):
     -------------------------------------------------------
     """
 
-    # Your code here
+    total_calories = 0
 
+    if len(foods) == 0:
+        total_calories
+
+    else:
+        for food in foods:
+            total_calories += food.calories
+
+        avg = total_calories / len(foods)
+
+    avg = round(avg)
+    
     return avg
 
 
@@ -190,8 +206,20 @@ def calories_by_origin(foods, origin):
     """
     assert origin in range(len(Food.ORIGIN))
 
-    # Your code here
+    total_calories = 0
+    count = 0
 
+    for food in foods:
+        if food.origin == origin:
+            total_calories += food.calories
+            count += 1
+
+    if count > 0:
+        avg = total_calories / count
+    else:
+        avg = 0
+    
+    avg = round(avg)
     return avg
 
 
@@ -209,7 +237,20 @@ def food_table(foods):
     -------------------------------------------------------
     """
 
-    # Your code here
+    print("Food                         Origin          Vegetarian      Calories")
+    print("-" * 75)
+
+    for food in foods:
+        veg_status = "True" if food.is_vegetarian else "False"
+
+        food_name = (food.name + ' ' * 30)[:30]
+        food_origin = (Food.ORIGIN[food.origin] + ' ' * 15)[:15]
+        food_veg_status = (veg_status + ' ' * 15)[:15]
+        food_calories = str(food.calories) + ' ' * 15
+
+        food_calories = food_calories[:15]
+        
+        print(food_name + food_origin + food_veg_status + food_calories)
 
     return
 
@@ -233,6 +274,21 @@ def food_search(foods, origin, max_cals, is_veg):
     """
     assert origin in range(-1, len(Food.ORIGIN))
 
-    # Your code here
+    result = []
+    
+    for food in foods:
+        origin_matches = (origin == -1) or (food.origin == origin)
+
+        cals_matches = (max_cals == 0) or (food.calories <= max_cals)
+
+        veg_matches = (is_veg is False) or (food.is_vegetarian == is_veg)
+     
+        if origin_matches and cals_matches and veg_matches:
+            result.append(food)
 
     return result
+
+
+
+
+

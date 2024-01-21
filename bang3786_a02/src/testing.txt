@@ -1,0 +1,181 @@
+"""
+-------------------------------------------------------
+Testing
+-------------------------------------------------------
+Author:  Mike Bangar
+ID:      169073786
+Email:   bang3786@mylaurier.ca
+Version: 2024-01-21
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+
+Name: Moo Goo Guy Pan
+Origin: Chinese
+Vegetarian: False
+Calories: 272
+Name: Shark Fin Soup
+Origin: Chinese
+Vegetarian: False
+Calories: 46
+Name: Kung Pao Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 229
+Name: General Tao Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 850
+Name: Spicy Vegetable Moo Shu
+Origin: Chinese
+Vegetarian: True
+Calories: 140
+Name: BBQ Pork
+Origin: Chinese
+Vegetarian: False
+Calories: 920
+Name: Orange Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 800
+Name: Vegetables with Cashew Nuts
+Origin: Chinese
+Vegetarian: True
+Calories: 143
+Name: Lemon Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 226
+... (continues)
+
+
+Name: Vegetable Alicha
+Origin: Ethiopian
+Vegetarian: True
+Calories: 138
+
+Name: Lasagna
+Origin: Italian
+Vegetarian: False
+Calories: 135
+Name: Fettuccine
+Origin: Italian
+Vegetarian: False
+Calories: 266
+Name: Ravioli
+Origin: Italian
+Vegetarian: False
+Calories: 246
+Name: Crepe
+Origin: Italian
+Vegetarian: True
+Calories: 186
+Name: Pepperoni Pizza
+Origin: Italian
+Vegetarian: False
+Calories: 713
+Name: Panzerotti
+Origin: Italian
+Vegetarian: False
+Calories: 770
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t02
+
+The average calories in all foods from our list is: 791
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t03
+
+The average calories in Chinese foods is: 362 
+
+The average calories in Indian foods is: 328 
+
+The average calories in Ethiopian foods is: 138 
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t04 
+
+Food                         Origin          Vegetarian      Calories
+---------------------------------------------------------------------------
+Lasagna                       Italian        False          135            
+Butter Chicken                Indian         False          490            
+Moo Goo Guy Pan               Chinese        False          272            
+Vegetable Alicha              Ethiopian      True           138            
+Spanakopita                   Greek          True           260            
+Chirashi Don                  Japanese       False          600            
+Canuck Burger                 Canadian       False          7500           
+Turducken                     American       False          12240          
+Shark Fin Soup                Chinese        False          46             
+Chamuco                       Mexican        True           150            
+Natto                         Japanese       True           212            
+Canada Goose Chili            Canadian       False          199            
+Diet Free-Range Gluten-free WaAmerican       True           0              
+Kung Pao Chicken              Chinese        False          229            
+General Tao Chicken           Chinese        False          850            
+Spicy Vegetable Moo Shu       Chinese        True           140            
+BBQ Pork                      Chinese        False          920            
+Orange Chicken                Chinese        False          800            
+Vegetables with Cashew Nuts   Chinese        True           143            
+Lemon Chicken                 Chinese        False          226            
+Beef with Green Pepper        Chinese        False          251            
+Sweet and Sour Pork           Chinese        False          231            
+Szechuan Shrimp               Chinese        False          516            
+Poutine                       Canadian       False          710            
+Teppanyaki                    Japanese       False          200            
+...
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t05
+
+Chinese food with less than 300 calories and is vegetarian:
+
+Name: Spicy Vegetable Moo Shu
+Origin: Chinese
+Vegetarian: True
+Calories: 140
+
+Name: Vegetables with Cashew Nuts
+Origin: Chinese
+Vegetarian: True
+Calories: 143
+
+Name: Spring Rolls
+Origin: Chinese
+Vegetarian: True
+Calories: 200
+
+Indian food with less than 600 calories and is non-vegetarian:
+
+Name: Butter Chicken
+Origin: Indian
+Vegetarian: False
+Calories: 490
+
+Name: Chicken Kabob
+Origin: Indian
+Vegetarian: False
+Calories: 167
+
+Canadian food with less than 500 calories and is non-vegetarian:
+
+Name: Canada Goose Chili
+Origin: Canadian
+Vegetarian: False
+Calories: 199
+
+Name: Fricot
+Origin: Canadian
+Vegetarian: False
+Calories: 360
+
+-------------------------------------------------------
