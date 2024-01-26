@@ -1,0 +1,626 @@
+"""
+-------------------------------------------------------
+Testing
+-------------------------------------------------------
+Author:  Mike Bangar
+ID:      169073786
+Email:   bang3786@mylaurier.ca
+Version: 2024-01-26'
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+
+Inserting elements into the queue:
+Inserting 10 into the queue.
+Queue now contains: [10]
+Inserting 20 into the queue.
+Queue now contains: [10, 20]
+Inserting 30 into the queue.
+Queue now contains: [10, 20, 30]
+Inserting 40 into the queue.
+Queue now contains: [10, 20, 30, 40]
+Inserting 50 into the queue.
+Queue now contains: [10, 20, 30, 40, 50]
+
+Inserting elements into the queue: (blank queue)
+
+Inserting elements into the queue:
+Inserting 1 into the queue.
+Queue now contains: [1]
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t02
+
+Inserting elements into the queue:
+Queue now contains: [10, 20, 30, 40, 50]
+
+Peeking at the front element: 10
+
+Removing elements from the queue:
+Removed 10 from the queue.
+Next element to be removed: 20
+Queue now contains: [20, 30, 40, 50]
+Removed 20 from the queue.
+Next element to be removed: 30
+Queue now contains: [30, 40, 50]
+Removed 30 from the queue.
+Next element to be removed: 40
+Queue now contains: [40, 50]
+Removed 40 from the queue.
+Next element to be removed: 50
+Queue now contains: [50]
+Removed 50 from the queue.
+The queue is now empty.
+Queue now contains: []
+
+
+Inserting elements into the queue:
+Queue now contains: []
+
+Removing elements from the queue:
+
+
+Inserting elements into the queue:
+Queue now contains: [1]
+
+Peeking at the front element: 1
+
+Removing elements from the queue:
+Removed 1 from the queue.
+The queue is now empty.
+Queue now contains: []
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t03
+
+Original source array: [10, 20, 30, 40, 50]
+Source array after populating queue: []
+Queue after populating from source: [10, 20, 30, 40, 50]
+Queue after transferring to target array: []
+Target array after receiving queue contents: [10, 20, 30, 40, 50]
+
+Testing queue operations:
+Testing an empty queue:
+Is the queue empty? (Expected: True): True
+Length of the queue (Expected: 0): 0
+Cannot peek or remove from an empty queue.
+
+Inserting elements into the queue:
+Inserted 60. Queue length is now 1.
+Inserted 70. Queue length is now 2.
+Inserted 80. Queue length is now 3.
+Inserted 90. Queue length is now 4.
+Inserted 100. Queue length is now 5.
+
+Testing a non-empty queue:
+Is the queue empty? (Expected: False): False
+Peek at the front of the queue (Expected: first element of a): 60
+
+Removing elements from the queue:
+Removed 60. Queue length is now 4.
+Removed 70. Queue length is now 3.
+Removed 80. Queue length is now 2.
+Removed 90. Queue length is now 1.
+Removed 100. Queue length is now 0.
+
+Final state of the queue:
+Is the queue empty? (Expected: True): True
+Length of the queue (Expected: 0): 0
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t04 
+
+The highest priority value is: 1
+
+The highest priority value is: Apple
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t05
+
+Removed: 10
+Removed: 20
+Removed: 30
+
+Removed: Apple
+Removed: Banana
+Removed: Mango
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t06
+
+Moving items from list to priority queue:
+All items moved to priority queue. List is now empty: True
+
+Moving items from priority queue back to list:
+All items moved back to list. Priority queue is now empty: True
+Items in list: 43
+
+Testing insert and is_empty:
+Inserted Name: Lasagna
+Origin: Italian
+Vegetarian: False
+Calories: 135, Queue is_empty: False
+Inserted Name: Butter Chicken
+Origin: Indian
+Vegetarian: False
+Calories: 490, Queue is_empty: False
+Inserted Name: Moo Goo Guy Pan
+Origin: Chinese
+Vegetarian: False
+Calories: 272, Queue is_empty: False
+Inserted Name: Vegetable Alicha
+Origin: Ethiopian
+Vegetarian: True
+Calories: 138, Queue is_empty: False
+Inserted Name: Spanakopita
+Origin: Greek
+Vegetarian: True
+Calories: 260, Queue is_empty: False
+Inserted Name: Chirashi Don
+Origin: Japanese
+Vegetarian: False
+Calories: 600, Queue is_empty: False
+Inserted Name: Canuck Burger
+Origin: Canadian
+Vegetarian: False
+Calories: 7500, Queue is_empty: False
+Inserted Name: Turducken
+Origin: American
+Vegetarian: False
+Calories: 12240, Queue is_empty: False
+Inserted Name: Shark Fin Soup
+Origin: Chinese
+Vegetarian: False
+Calories: 46, Queue is_empty: False
+Inserted Name: Chamuco
+Origin: Mexican
+Vegetarian: True
+Calories: 150, Queue is_empty: False
+Inserted Name: Natto
+Origin: Japanese
+Vegetarian: True
+Calories: 212, Queue is_empty: False
+Inserted Name: Canada Goose Chili
+Origin: Canadian
+Vegetarian: False
+Calories: 199, Queue is_empty: False
+Inserted Name: Diet Free-Range Gluten-free Water
+Origin: American
+Vegetarian: True
+Calories: 0, Queue is_empty: False
+Inserted Name: Kung Pao Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 229, Queue is_empty: False
+Inserted Name: General Tao Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 850, Queue is_empty: False
+Inserted Name: Spicy Vegetable Moo Shu
+Origin: Chinese
+Vegetarian: True
+Calories: 140, Queue is_empty: False
+Inserted Name: BBQ Pork
+Origin: Chinese
+Vegetarian: False
+Calories: 920, Queue is_empty: False
+Inserted Name: Orange Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 800, Queue is_empty: False
+Inserted Name: Vegetables with Cashew Nuts
+Origin: Chinese
+Vegetarian: True
+Calories: 143, Queue is_empty: False
+Inserted Name: Lemon Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 226, Queue is_empty: False
+Inserted Name: Beef with Green Pepper
+Origin: Chinese
+Vegetarian: False
+Calories: 251, Queue is_empty: False
+Inserted Name: Sweet and Sour Pork
+Origin: Chinese
+Vegetarian: False
+Calories: 231, Queue is_empty: False
+Inserted Name: Szechuan Shrimp
+Origin: Chinese
+Vegetarian: False
+Calories: 516, Queue is_empty: False
+Inserted Name: Poutine
+Origin: Canadian
+Vegetarian: False
+Calories: 710, Queue is_empty: False
+Inserted Name: Teppanyaki
+Origin: Japanese
+Vegetarian: False
+Calories: 200, Queue is_empty: False
+Inserted Name: Greek Salad
+Origin: Greek
+Vegetarian: True
+Calories: 185, Queue is_empty: False
+Inserted Name: Fettuccine
+Origin: Italian
+Vegetarian: False
+Calories: 266, Queue is_empty: False
+Inserted Name: Teriyaki
+Origin: Japanese
+Vegetarian: False
+Calories: 233, Queue is_empty: False
+Inserted Name: Shortbread 
+Origin: Scottish
+Vegetarian: True
+Calories: 502, Queue is_empty: False
+Inserted Name: Pavlova
+Origin: New Zealand
+Vegetarian: True
+Calories: 272, Queue is_empty: False
+Inserted Name: Hokey Pokey Ice Cream
+Origin: New Zealand
+Vegetarian: True
+Calories: 106, Queue is_empty: False
+Inserted Name: Fricot
+Origin: Canadian
+Vegetarian: False
+Calories: 360, Queue is_empty: False
+Inserted Name: Chip Butty
+Origin: English
+Vegetarian: True
+Calories: 956, Queue is_empty: False
+Inserted Name: Grilled Salmon
+Origin: Canadian
+Vegetarian: False
+Calories: 511, Queue is_empty: False
+Inserted Name: Ravioli
+Origin: Italian
+Vegetarian: False
+Calories: 246, Queue is_empty: False
+Inserted Name: Crepe
+Origin: Italian
+Vegetarian: True
+Calories: 186, Queue is_empty: False
+Inserted Name: Fried Rice
+Origin: Chinese
+Vegetarian: False
+Calories: 425, Queue is_empty: False
+Inserted Name: Pepperoni Pizza
+Origin: Italian
+Vegetarian: False
+Calories: 713, Queue is_empty: False
+Inserted Name: Chicken Kabob
+Origin: Indian
+Vegetarian: False
+Calories: 167, Queue is_empty: False
+Inserted Name: Panzerotti
+Origin: Italian
+Vegetarian: False
+Calories: 770, Queue is_empty: False
+Inserted Name: Spring Rolls
+Origin: Chinese
+Vegetarian: True
+Calories: 200, Queue is_empty: False
+Inserted Name: Chicken Chow Mein
+Origin: Chinese
+Vegetarian: False
+Calories: 178, Queue is_empty: False
+Inserted Name: Chicken Wings
+Origin: American
+Vegetarian: False
+Calories: 298, Queue is_empty: False
+
+Testing peek and remove:
+Peek: Name: BBQ Pork
+Origin: Chinese
+Vegetarian: False
+Calories: 920, Removed: Name: BBQ Pork
+Origin: Chinese
+Vegetarian: False
+Calories: 920
+Peek: Name: Beef with Green Pepper
+Origin: Chinese
+Vegetarian: False
+Calories: 251, Removed: Name: Beef with Green Pepper
+Origin: Chinese
+Vegetarian: False
+Calories: 251
+Peek: Name: Butter Chicken
+Origin: Indian
+Vegetarian: False
+Calories: 490, Removed: Name: Butter Chicken
+Origin: Indian
+Vegetarian: False
+Calories: 490
+Peek: Name: Canada Goose Chili
+Origin: Canadian
+Vegetarian: False
+Calories: 199, Removed: Name: Canada Goose Chili
+Origin: Canadian
+Vegetarian: False
+Calories: 199
+Peek: Name: Canuck Burger
+Origin: Canadian
+Vegetarian: False
+Calories: 7500, Removed: Name: Canuck Burger
+Origin: Canadian
+Vegetarian: False
+Calories: 7500
+Peek: Name: Chamuco
+Origin: Mexican
+Vegetarian: True
+Calories: 150, Removed: Name: Chamuco
+Origin: Mexican
+Vegetarian: True
+Calories: 150
+Peek: Name: Chicken Chow Mein
+Origin: Chinese
+Vegetarian: False
+Calories: 178, Removed: Name: Chicken Chow Mein
+Origin: Chinese
+Vegetarian: False
+Calories: 178
+Peek: Name: Chicken Kabob
+Origin: Indian
+Vegetarian: False
+Calories: 167, Removed: Name: Chicken Kabob
+Origin: Indian
+Vegetarian: False
+Calories: 167
+Peek: Name: Chicken Wings
+Origin: American
+Vegetarian: False
+Calories: 298, Removed: Name: Chicken Wings
+Origin: American
+Vegetarian: False
+Calories: 298
+Peek: Name: Chip Butty
+Origin: English
+Vegetarian: True
+Calories: 956, Removed: Name: Chip Butty
+Origin: English
+Vegetarian: True
+Calories: 956
+Peek: Name: Chirashi Don
+Origin: Japanese
+Vegetarian: False
+Calories: 600, Removed: Name: Chirashi Don
+Origin: Japanese
+Vegetarian: False
+Calories: 600
+Peek: Name: Crepe
+Origin: Italian
+Vegetarian: True
+Calories: 186, Removed: Name: Crepe
+Origin: Italian
+Vegetarian: True
+Calories: 186
+Peek: Name: Diet Free-Range Gluten-free Water
+Origin: American
+Vegetarian: True
+Calories: 0, Removed: Name: Diet Free-Range Gluten-free Water
+Origin: American
+Vegetarian: True
+Calories: 0
+Peek: Name: Fettuccine
+Origin: Italian
+Vegetarian: False
+Calories: 266, Removed: Name: Fettuccine
+Origin: Italian
+Vegetarian: False
+Calories: 266
+Peek: Name: Fricot
+Origin: Canadian
+Vegetarian: False
+Calories: 360, Removed: Name: Fricot
+Origin: Canadian
+Vegetarian: False
+Calories: 360
+Peek: Name: Fried Rice
+Origin: Chinese
+Vegetarian: False
+Calories: 425, Removed: Name: Fried Rice
+Origin: Chinese
+Vegetarian: False
+Calories: 425
+Peek: Name: General Tao Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 850, Removed: Name: General Tao Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 850
+Peek: Name: Greek Salad
+Origin: Greek
+Vegetarian: True
+Calories: 185, Removed: Name: Greek Salad
+Origin: Greek
+Vegetarian: True
+Calories: 185
+Peek: Name: Grilled Salmon
+Origin: Canadian
+Vegetarian: False
+Calories: 511, Removed: Name: Grilled Salmon
+Origin: Canadian
+Vegetarian: False
+Calories: 511
+Peek: Name: Hokey Pokey Ice Cream
+Origin: New Zealand
+Vegetarian: True
+Calories: 106, Removed: Name: Hokey Pokey Ice Cream
+Origin: New Zealand
+Vegetarian: True
+Calories: 106
+Peek: Name: Kung Pao Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 229, Removed: Name: Kung Pao Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 229
+Peek: Name: Lasagna
+Origin: Italian
+Vegetarian: False
+Calories: 135, Removed: Name: Lasagna
+Origin: Italian
+Vegetarian: False
+Calories: 135
+Peek: Name: Lemon Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 226, Removed: Name: Lemon Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 226
+Peek: Name: Moo Goo Guy Pan
+Origin: Chinese
+Vegetarian: False
+Calories: 272, Removed: Name: Moo Goo Guy Pan
+Origin: Chinese
+Vegetarian: False
+Calories: 272
+Peek: Name: Natto
+Origin: Japanese
+Vegetarian: True
+Calories: 212, Removed: Name: Natto
+Origin: Japanese
+Vegetarian: True
+Calories: 212
+Peek: Name: Orange Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 800, Removed: Name: Orange Chicken
+Origin: Chinese
+Vegetarian: False
+Calories: 800
+Peek: Name: Panzerotti
+Origin: Italian
+Vegetarian: False
+Calories: 770, Removed: Name: Panzerotti
+Origin: Italian
+Vegetarian: False
+Calories: 770
+Peek: Name: Pavlova
+Origin: New Zealand
+Vegetarian: True
+Calories: 272, Removed: Name: Pavlova
+Origin: New Zealand
+Vegetarian: True
+Calories: 272
+Peek: Name: Pepperoni Pizza
+Origin: Italian
+Vegetarian: False
+Calories: 713, Removed: Name: Pepperoni Pizza
+Origin: Italian
+Vegetarian: False
+Calories: 713
+Peek: Name: Poutine
+Origin: Canadian
+Vegetarian: False
+Calories: 710, Removed: Name: Poutine
+Origin: Canadian
+Vegetarian: False
+Calories: 710
+Peek: Name: Ravioli
+Origin: Italian
+Vegetarian: False
+Calories: 246, Removed: Name: Ravioli
+Origin: Italian
+Vegetarian: False
+Calories: 246
+Peek: Name: Shark Fin Soup
+Origin: Chinese
+Vegetarian: False
+Calories: 46, Removed: Name: Shark Fin Soup
+Origin: Chinese
+Vegetarian: False
+Calories: 46
+Peek: Name: Shortbread 
+Origin: Scottish
+Vegetarian: True
+Calories: 502, Removed: Name: Shortbread 
+Origin: Scottish
+Vegetarian: True
+Calories: 502
+Peek: Name: Spanakopita
+Origin: Greek
+Vegetarian: True
+Calories: 260, Removed: Name: Spanakopita
+Origin: Greek
+Vegetarian: True
+Calories: 260
+Peek: Name: Spicy Vegetable Moo Shu
+Origin: Chinese
+Vegetarian: True
+Calories: 140, Removed: Name: Spicy Vegetable Moo Shu
+Origin: Chinese
+Vegetarian: True
+Calories: 140
+Peek: Name: Spring Rolls
+Origin: Chinese
+Vegetarian: True
+Calories: 200, Removed: Name: Spring Rolls
+Origin: Chinese
+Vegetarian: True
+Calories: 200
+Peek: Name: Sweet and Sour Pork
+Origin: Chinese
+Vegetarian: False
+Calories: 231, Removed: Name: Sweet and Sour Pork
+Origin: Chinese
+Vegetarian: False
+Calories: 231
+Peek: Name: Szechuan Shrimp
+Origin: Chinese
+Vegetarian: False
+Calories: 516, Removed: Name: Szechuan Shrimp
+Origin: Chinese
+Vegetarian: False
+Calories: 516
+Peek: Name: Teppanyaki
+Origin: Japanese
+Vegetarian: False
+Calories: 200, Removed: Name: Teppanyaki
+Origin: Japanese
+Vegetarian: False
+Calories: 200
+Peek: Name: Teriyaki
+Origin: Japanese
+Vegetarian: False
+Calories: 233, Removed: Name: Teriyaki
+Origin: Japanese
+Vegetarian: False
+Calories: 233
+Peek: Name: Turducken
+Origin: American
+Vegetarian: False
+Calories: 12240, Removed: Name: Turducken
+Origin: American
+Vegetarian: False
+Calories: 12240
+Peek: Name: Vegetable Alicha
+Origin: Ethiopian
+Vegetarian: True
+Calories: 138, Removed: Name: Vegetable Alicha
+Origin: Ethiopian
+Vegetarian: True
+Calories: 138
+Peek: Name: Vegetables with Cashew Nuts
+Origin: Chinese
+Vegetarian: True
+Calories: 143, Removed: Name: Vegetables with Cashew Nuts
+Origin: Chinese
+Vegetarian: True
+Calories: 143
+
+-------------------------------------------------------
