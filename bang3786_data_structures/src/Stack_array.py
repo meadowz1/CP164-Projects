@@ -109,3 +109,46 @@ class Stack:
         """
         for value in self._values[::-1]:
             yield value
+
+    
+    def combine(self, source1, source2):
+        """
+        -------------------------------------------------------
+        Combines two source stacks into the current target stack.
+        When finished, the contents of source1 and source2 are interlaced
+        into target and source1 and source2 are empty.
+        Use: target.combine(source1, source2)
+        -------------------------------------------------------
+        Parameters:
+            source1 - an array-based stack (Stack)
+            source2 - an array-based stack (Stack)
+        Returns:
+            None
+        -------------------------------------------------------
+        """
+        
+        while source1._values or source2._values:
+            
+            if source1._values:
+                self._values.append(source1._values.pop())
+                
+            if source2._values:
+                self._values.append(source2._values.pop())
+                
+        return
+        
+        
+    def reverse(self):
+        """
+        -------------------------------------------------------
+        Reverses the contents of the source stack.
+        Use: source.reverse()
+        -------------------------------------------------------
+        Returns:
+            None
+        -------------------------------------------------------
+        """
+        
+        self._values.reverse()
+        
+        return
