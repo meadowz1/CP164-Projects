@@ -1,0 +1,124 @@
+"""
+-------------------------------------------------------
+Testing
+-------------------------------------------------------
+Author:  Mike Bangar
+ID:      169073786
+Email:   bang3786@mylaurier.ca
+Version: 2024-02-01
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+
+Name: Spring Rolls
+Origin: Chinese
+Vegetarian: None
+Calories: None
+
+Name: Yummy
+Origin: Ethiopian
+Vegetarian: True
+Calories: None
+
+Name: NAHHH
+Origin: Japanese
+Vegetarian: None
+Calories: 250
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t02
+-------------------------------------------------------
+
+-------------------------------------------------------
+t03
+
+Appending elements to the list...
+List after appends: [10, 20, 30]
+
+Inserting an element at index 1...
+List after insert: [10, 15, 20, 30]
+
+Removing the element '20'...
+Removed value: 20
+List after removal: [10, 15, 30]
+
+Attempting to remove a non-existent element '40'...
+Result of removal: None
+List after failed removal attempt: [10, 15, 30]
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t04 
+
+The index of the first occurrence of '20': 1
+The value found for '30': 30
+Is '20' in the list? True
+The count of '10' in the list: 2
+The maximum value in the list: 30
+The minimum value in the list: 10
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t05
+
+The second item in the list: 20
+Setting the second item in the list to 25...
+Trying to access index out of range:
+Error: Invalid index value
+Trying to set index out of range:
+Error: Invalid index value
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t06
+
+List after array_to_list:
+1 2 3 4 5 
+Python list after list_to_array: [1, 2, 3, 4, 5]
+List is empty after transfer: None
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t07
+Testing the List class...
+New list created. Is empty: None (Expected: True)
+Appended Name: Lasagna
+Origin: Italian
+Vegetarian: False
+Calories: 135 to list. New list: [<Food.Food object at 0x000002005D946B60>]
+Appended Name: Butter Chicken
+Origin: Indian
+Vegetarian: False
+Calories: 490 to list. New list: [<Food.Food object at 0x000002005D946B60>, <Food.Food object at 0x000002005D946B00>]
+Appended Name: Moo Goo Guy Pan
+Origin: Chinese
+Vegetarian: False
+Calories: 272 to list. New list: [<Food.Food object at 0x000002005D946B60>, <Food.Food object at 0x000002005D946B00>, <Food.Food object at 0x000002005D946AA0>]
+Appended Name: Vegetable Alicha
+Origin: Ethiopian
+Vegetarian: True
+Calories: 138 to list. New list: [<Food.Food object at 0x000002005D946B60>, <Food.Food object at 0x000002005D946B00>, <Food.Food object at 0x000002005D946AA0>, <Food.Food object at 0x000002005D946A40>]
+Appended Name: Spanakopita
+Origin: Greek
+Vegetarian: True
+Calories: 260 to list. New list: [<Food.Food object at 0x000002005D946B60>, <Food.Food object at 0x000002005D946B00>, <Food.Food object at 0x000002005D946AA0>, <Food.Food object at 0x000002005D946A40>, <Food.Food object at 0x000002005D9469E0>]
+Appended Name: Chirashi Don
+Origin: Japanese
+Vegetarian: False
+Calories: 600 to list. New list: [<Food.Food object at 0x000002005D946B60>, <Food.Food object at 0x000002005D946B00>, <Food.Food object at 0x000002005D946AA0>, <Food.Food object at 0x000002005D946A40>, <Food.Food object at 0x000002005D9469E0>, <Food.Food object at 0x000002005D946980>]
+Appended Name: Canuck Burger
+Origin: Canadian
+Vegetarian: False
+Calories: 7500 to list. New list: [<Food.Food object at 0x000002005D946B60>, <Food.Food object at 0x000002005D946B00>, <Food.Food object at 0x000002005D946AA0>, <Food.Food object at 0x000002005D946A40>, <Food.Food object at 0x000002005D9469E0>, <Food.Food object at 0x000002005D946980>, <Food.Food object at 0x000002005D946920>]
+Appended Name: Turducken
+Origin: American
+Vegetarian: False
+
+-------------------------------------------------------

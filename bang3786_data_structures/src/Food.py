@@ -69,6 +69,7 @@ class Food:
         self.origin = origin
         self.is_vegetarian = is_vegetarian
         self.calories = calories
+            
         return
 
     def __str__(self):
@@ -84,8 +85,8 @@ class Food:
         """
 
         origin_str = Food.ORIGIN[self.origin]
-        vegetarian_str = "True" if self.is_vegetarian else "False"
-        calories_str = str(self.calories) if self.calories is not None else "Unknown"
+        vegetarian_str = "True" if self.is_vegetarian is True else ("False" if self.is_vegetarian is False else "None")
+        calories_str = str(self.calories) if self.calories is not None else "None"
 
         string = f"Name: {self.name}\nOrigin: {origin_str}\nVegetarian: {vegetarian_str}\nCalories: {calories_str}"
 

@@ -13,6 +13,7 @@ __updated__ = '2024-01-18'
 from Queue_array import Queue
 from Stack_array import Stack
 from Priority_Queue_array import Priority_Queue
+from List_array import List
 
 # Stack Utilities
 
@@ -270,3 +271,120 @@ def priority_queue_test(a):
 
     return
         
+        
+# List Utilities
+
+def array_to_list(llist, source):
+    """
+    -------------------------------------------------------
+    Appends contests of source to llist. At finish, source is empty.
+    Last element in source is at rear of llist,
+    first element in source is at front of llist.
+    Use: array_to_list(llist, source)
+    -------------------------------------------------------
+    Parameters:
+        llist - a List object (List)
+        source - a Python list (list)
+    Returns:
+        None
+    -------------------------------------------------------
+    """
+    
+    while source:
+        llist.prepend(source.pop())
+        
+    return
+
+def list_to_array(llist, target):
+    """
+    -------------------------------------------------------
+    Removes contents of llist into target. At finish, llist is empty.
+    Front element of llist is at front of target,
+    rear element of llist is at rear of target.
+    Use: list_to_array(llist, target)
+    -------------------------------------------------------
+    Parameters:
+        llist - a List object (List)
+        target - a Python list (list)
+    Returns:
+        None
+    -------------------------------------------------------
+    """
+    
+    for value in llist:
+        target.append(value)
+        
+    llist._values.clear()
+
+def list_test(source):
+    """
+    -------------------------------------------------------
+    Tests List implementation.
+    The methods of List are tested for both empty and
+    non-empty lists using the data in source
+    Use: list_test(source)
+    -------------------------------------------------------
+    Parameters:
+        source - list of data (list of ?)
+    Returns:
+        None
+    -------------------------------------------------------
+    """
+    print("Testing the List class...")
+    lst = List()
+
+    print(f"New list created. Is empty: {lst.is_empty()} (Expected: True)")
+
+    for item in source:
+        lst.append(item)
+        print(f"Appended {item} to list. New list: {[value for value in lst]}")
+
+
+    target_array = []
+    list_to_array(lst, target_array)
+
+    array_to_list(lst, target_array)
+
+    if source:
+        value_to_remove = source[0]
+        removed_value = lst.remove(value_to_remove)
+        print(f"Removed {value_to_remove} from list. Removed: {removed_value} (Expected: {value_to_remove})")
+        print(f"New list: {[value for value in lst]}")
+
+    other_list = List()
+    for item in reversed(source[1:]):
+        other_list.append(item)
+    print(f"List equality test: {lst == other_list} (Expected: True)")
+    
+    if lst.is_empty():
+        print("List is empty, max should raise an assertion error.")
+    else:
+        max_value = lst.max()
+        print(f"Max value of list: {max_value} (Expected: {max(source)})")
+
+    if lst.is_empty():
+        print("List is empty, min should raise an assertion error.")
+    else:
+        min_value = lst.min()
+        print(f"Min value of list: {min_value} (Expected: {min(source)})")
+
+    find_value = source[0] if source else None
+    found_value = lst.find(find_value)
+    print(f"Find {find_value} in list: Found {found_value} (Expected: {find_value if find_value in source else None})")
+
+    if source:
+        index_value = source[0]
+        found_index = lst.index(index_value)
+        print(f"Index of {index_value} in list: {found_index} (Expected: {source.index(index_value) if index_value in source else -1})")
+
+    if source:
+        count_value = source[0]
+        count_result = lst.count(count_value)
+        print(f"Count of {count_value} in list: {count_result} (Expected: {source.count(count_value)})")
+
+    insert_value = "test"
+    lst.insert(0, insert_value)
+    print(f"Insert {insert_value} at index 0: {[value for value in lst]} (Expected: [{insert_value}, ...rest of list...])")
+
+
+    return
