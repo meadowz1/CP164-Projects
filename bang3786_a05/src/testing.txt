@@ -1,0 +1,68 @@
+"""
+-------------------------------------------------------
+Testing
+-------------------------------------------------------
+Author:  Mike Bangar
+ID:      169073786
+Email:   bang3786@mylaurier.ca
+Version: 2024-02-09
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+
+Get item: Name: Lasagna
+Origin: Italian
+Vegetarian: False
+Calories: 135
+List after clean: ['Name: Lasagna\nOrigin: Italian\nVegetarian: False\nCalories: 135', 'Name: Butter Chicken\nOrigin: Indian\nVegetarian: False\nCalories: 490', 'Name: Moo Goo Guy Pan\nOrigin: Chinese\nVegetarian: False\nCalories: 272', 'Name: Vegetable Alicha\nOrigin: Ethiopian\nVegetarian: True\nCalories: 138', 'Name: Spanakopita\nOrigin: Greek\nVegetarian: True\nCalories: 260', 'Name: Chirashi Don\nOrigin: Japanese\nVegetarian: False\nCalories: 600', 'Name: Canuck Burger\nOrigin: Canadian\nVegetarian: False\nCalories: 7500', 'Name: Turducken\nOrigin: American\nVegetarian: False\nCalories: 12240', 'Name: Shark Fin Soup\nOrigin: Chinese\nVegetarian: False\nCalories: 46', 'Name: Chamuco\nOrigin: Mexican\nVegetarian: True\nCalories: 150', 'Name: Natto\nOrigin: Japanese\nVegetarian: True\nCalories: 212', 'Name: Canada Goose Chili\nOrigin: Canadian\nVegetarian: False\nCalories: 199', 'Name: Diet Free-Range Gluten-free Water\nOrigin: American\nVegetarian: True\nCalories: 0', 'Name: Kung Pao Chicken\nOrigin: Chinese\nVegetarian: False\nCalories: 229', 'Name: General Tao Chicken\nOrigin: Chinese\nVegetarian: False\nCalories: 850', 'Name: Spicy Vegetable Moo Shu\nOrigin: Chinese\nVegetarian: True\nCalories: 140', 'Name: BBQ Pork\nOrigin: Chinese\nVegetarian: False\nCalories: 920', 'Name: Orange Chicken\nOrigin: Chinese\nVegetarian: False\nCalories: 800', 'Name: Vegetables with Cashew Nuts\nOrigin: Chinese\nVegetarian: True\nCalories: 143', 'Name: Lemon Chicken\nOrigin: Chinese\nVegetarian: False\nCalories: 226', 'Name: Beef with Green Pepper\nOrigin: Chinese\nVegetarian: False\nCalories: 251', 'Name: Sweet and Sour Pork\nOrigin: Chinese\nVegetarian: False\nCalories: 231', 'Name: Szechuan Shrimp\nOrigin: Chinese\nVegetarian: False\nCalories: 516', 'Name: Poutine\nOrigin: Canadian\nVegetarian: False\nCalories: 710', 'Name: Teppanyaki\nOrigin: Japanese\nVegetarian: False\nCalories: 200', 'Name: Greek Salad\nOrigin: Greek\nVegetarian: True\nCalories: 185', 'Name: Fettuccine\nOrigin: Italian\nVegetarian: False\nCalories: 266', 'Name: Teriyaki\nOrigin: Japanese\nVegetarian: False\nCalories: 233', 'Name: Shortbread \nOrigin: Scottish\nVegetarian: True\nCalories: 502', 'Name: Pavlova\nOrigin: New Zealand\nVegetarian: True\nCalories: 272', 'Name: Hokey Pokey Ice Cream\nOrigin: New Zealand\nVegetarian: True\nCalories: 106', 'Name: Fricot\nOrigin: Canadian\nVegetarian: False\nCalories: 360', 'Name: Chip Butty\nOrigin: English\nVegetarian: True\nCalories: 956', 'Name: Grilled Salmon\nOrigin: Canadian\nVegetarian: False\nCalories: 511', 'Name: Ravioli\nOrigin: Italian\nVegetarian: False\nCalories: 246', 'Name: Crepe\nOrigin: Italian\nVegetarian: True\nCalories: 186', 'Name: Fried Rice\nOrigin: Chinese\nVegetarian: False\nCalories: 425', 'Name: Pepperoni Pizza\nOrigin: Italian\nVegetarian: False\nCalories: 713', 'Name: Chicken Kabob\nOrigin: Indian\nVegetarian: False\nCalories: 167', 'Name: Panzerotti\nOrigin: Italian\nVegetarian: False\nCalories: 770', 'Name: Spring Rolls\nOrigin: Chinese\nVegetarian: True\nCalories: 200', 'Name: Chicken Chow Mein\nOrigin: Chinese\nVegetarian: False\nCalories: 178', 'Name: Chicken Wings\nOrigin: American\nVegetarian: False\nCalories: 298']
+List after combine: ['Name: Lasagna\nOrigin: Italian\nVegetarian: False\nCalories: 135', 'Name: Butter Chicken\nOrigin: Indian\nVegetarian: False\nCalories: 490']
+List after intersection: ['Name: Lasagna\nOrigin: Italian\nVegetarian: False\nCalories: 135', 'Name: Butter Chicken\nOrigin: Indian\nVegetarian: False\nCalories: 490']
+List after prepend: ['Name: Test Food\nOrigin: Canadian\nVegetarian: True\nCalories: 100', 'Name: Lasagna\nOrigin: Italian\nVegetarian: False\nCalories: 135', 'Name: Butter Chicken\nOrigin: Indian\nVegetarian: False\nCalories: 490']
+List after remove_front: ['Name: Lasagna\nOrigin: Italian\nVegetarian: False\nCalories: 135', 'Name: Butter Chicken\nOrigin: Indian\nVegetarian: False\nCalories: 490']
+List after remove_many: ['Name: Butter Chicken\nOrigin: Indian\nVegetarian: False\nCalories: 490']
+List 1 after split: []
+List 2 after split: ['Name: Butter Chicken\nOrigin: Indian\nVegetarian: False\nCalories: 490']
+List after union: ['Name: Butter Chicken\nOrigin: Indian\nVegetarian: False\nCalories: 490', 'Name: Lasagna\nOrigin: Italian\nVegetarian: False\nCalories: 135']
+List1 equal List2: True
+Name: Butter Chicken
+Origin: Indian
+Vegetarian: False
+Calories: 490
+Name: Lasagna
+Origin: Italian
+Vegetarian: False
+Calories: 135
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t02
+
+True
+Name: BBQ Pork
+Origin: Chinese
+Vegetarian: False
+Calories: 920
+43
+1
+Name: Lasagna
+Origin: Italian
+Vegetarian: False
+Calories: 135
+21
+The list is empty, cannot find a maximum value.
+The list is empty, cannot find a minimum value.
+The list is empty, cannot peek at the first element.
+The food Name: Lasagna
+Origin: Italian
+Vegetarian: False
+Calories: 135 is not in the list.
+The list is empty, cannot remove the front element.
+The list is empty, cannot split.
+The list is empty, cannot alternate split.
+The list is empty, cannot split by key.
+One or both lists are empty, cannot perform union.
+True
+
+-------------------------------------------------------

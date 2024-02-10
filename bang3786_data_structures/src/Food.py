@@ -5,7 +5,7 @@ Food class definition.
 Author:  David Brown
 ID:      123456789
 Email:   dbrown@wlu.ca
-__updated__ = "2023-05-15"
+__updated__ = "2024-02-10"
 -------------------------------------------------------
 """
 
@@ -37,12 +37,12 @@ class Food:
         """
 
         string = ""
-        
+
         length = len(Food.ORIGIN)
-            
+
         for i in range(length):
             string += (f"{i:2} {Food.ORIGIN[i]}")
-            string += "\n" 
+            string += "\n"
 
         return string
 
@@ -69,7 +69,7 @@ class Food:
         self.origin = origin
         self.is_vegetarian = is_vegetarian
         self.calories = calories
-            
+
         return
 
     def __str__(self):
@@ -85,8 +85,10 @@ class Food:
         """
 
         origin_str = Food.ORIGIN[self.origin]
-        vegetarian_str = "True" if self.is_vegetarian is True else ("False" if self.is_vegetarian is False else "None")
-        calories_str = str(self.calories) if self.calories is not None else "None"
+        vegetarian_str = "True" if self.is_vegetarian is True else (
+            "False" if self.is_vegetarian is False else "None")
+        calories_str = str(
+            self.calories) if self.calories is not None else "None"
 
         string = f"Name: {self.name}\nOrigin: {origin_str}\nVegetarian: {vegetarian_str}\nCalories: {calories_str}"
 
@@ -104,9 +106,8 @@ class Food:
             result - True if name and origin match, False otherwise (boolean)
         -------------------------------------------------------
         """
-        result = (self.name.lower(), self.origin) == \
-            (target.name.lower(), target.origin)
-        return result
+
+        return ((self.name.lower(), self.origin) == (target.name.lower(), target.origin))
 
     def __lt__(self, target):
         """

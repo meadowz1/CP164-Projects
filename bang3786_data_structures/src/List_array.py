@@ -5,7 +5,7 @@ Array version of the list ADT.
 Author:  David Brown
 ID:      123456789
 Email:   dbrown@wlu.ca
-__updated__ = "2023-05-07"
+__updated__ = "2024-02-09"
 -------------------------------------------------------
 """
 from copy import deepcopy
@@ -50,9 +50,8 @@ class List:
             the number of values in the list.
         -------------------------------------------------------
         """
-        # Your code here
 
-        return
+        return len(self._values)
 
     def __setitem__(self, i, value):
         """
@@ -69,7 +68,7 @@ class List:
         -------------------------------------------------------
         """
         assert self._is_valid_index(i), 'Invalid index value'
-    
+
         self._values[i] = deepcopy(value)
 
     def __contains__(self, key):
@@ -118,13 +117,13 @@ class List:
         """
         index = 0
         found = False
-    
+
         while not found and index < len(self._values):
             if self._values[index] == key:
                 found = True
             else:
                 index += 1
-    
+
         return index if found else -1
 
     def _swap(self, i, j):
@@ -164,7 +163,7 @@ class List:
         """
         value_copy = deepcopy(value)
         self._values.append(value_copy)
-        
+
         return
 
     def apply(self, func):
@@ -195,8 +194,9 @@ class List:
             None
         -------------------------------------------------------
         """
-        # Your code here
-
+        seen = set()
+        unique = [x for x in self._values if not (x in seen or seen.add(x))]
+        self._values = unique
         return
 
     def combine(self, source1, source2):
@@ -215,7 +215,13 @@ class List:
             None
         -------------------------------------------------------
         """
-        # Your code here
+        self._values = []
+
+        while not source1.is_empty() or not source2.is_empty():
+            if not source1.is_empty():
+                self._values.append(source1.pop(0))
+            if not source2.is_empty():
+                self._values.append(source2.pop(0))
 
         return
 
@@ -229,7 +235,9 @@ class List:
             target - a copy of self (List)
         -------------------------------------------------------
         """
-        # Your code here
+        target = List()
+        target._values = deepcopy(self._values)
+        return target
 
         return
 
@@ -259,14 +267,14 @@ class List:
             value - a copy of the full value matching key, otherwise None (?)
         -------------------------------------------------------
         """
-        
+
         value = None
-        
+
         index = self._linear_search(key)
-    
+
         if index != -1:
             value = deepcopy(self._values[index])
-        
+
         return value
 
     def index(self, key):
@@ -300,14 +308,14 @@ class List:
         -------------------------------------------------------
         """
         value_copy = deepcopy(value)
-    
+
         if -len(self._values) <= i <= len(self._values) - 1:
             self._values.insert(i, value_copy)
         elif i < -len(self._values):
             self._values.insert(0, value_copy)
         else:
             self._values.append(value_copy)
-            
+
         return
 
     def intersection(self, source1, source2):
@@ -324,7 +332,13 @@ class List:
             None
         -------------------------------------------------------
         """
-        # Your code here
+        self._values = []
+        set1 = set(source1._values)
+        set2 = set(source2._values)
+        intersection = set1.intersection(set2)
+
+        for value in intersection:
+            self.append(value)
 
         return
 
@@ -338,9 +352,8 @@ class List:
             True if the list is empty, False otherwise.
         -------------------------------------------------------
         """
-        # Your code here
 
-        return
+        return len(self._values) == 0
 
     def __eq__(self, target):
         """
@@ -357,9 +370,8 @@ class List:
                 as target in the same order, otherwise False. (boolean)
         -------------------------------------------------------
         """
-        # Your code here
 
-        return
+        return self._values == target._values
 
     def max(self):
         """
@@ -372,13 +384,13 @@ class List:
         -------------------------------------------------------
         """
         assert len(self._values) > 0, 'Cannot find maximum of an empty list'
-        
+
         maximum_value = self._values[0]
-        
-        for value in self._values[1:]:  
+
+        for value in self._values[1:]:
             if value > maximum_value:
                 maximum_value = value
-                
+
         return deepcopy(maximum_value)
 
     def min(self):
@@ -391,13 +403,13 @@ class List:
         -------------------------------------------------------
         """
         assert len(self._values) > 0, 'Cannot find minimum of an empty list'
-        
+
         minimum_value = self._values[0]
-        
-        for value in self._values[1:]: 
+
+        for value in self._values[1:]:
             if value < minimum_value:
                 minimum_value = value
-                
+
         return deepcopy(minimum_value)
 
     def peek(self):
@@ -474,12 +486,12 @@ class List:
         """
         index = self._linear_search(key)
         value = None
-        
+
         if index != -1:
             value = self._values.pop(index)
-        
+
         return value
-    
+
     def remove_front(self):
         """
         -------------------------------------------------------
@@ -492,9 +504,7 @@ class List:
         """
         assert (len(self._values) > 0), 'Cannot remove from an empty list'
 
-        # Your code here
-
-        return
+        return self._values.pop(0)
 
     def remove_many(self, key):
         """
@@ -508,7 +518,7 @@ class List:
             None
         -------------------------------------------------------
         """
-        # Your code here
+        self._values = [value for value in self._values if value != key]
 
         return
 
@@ -539,9 +549,14 @@ class List:
             target2 - a new List with <= 50% of the original List (List)
         -------------------------------------------------------
         """
-        # Your code here
+        midpoint = len(self._values) // 2
+        target1 = List()
+        target2 = List()
 
-        return
+        target1._values, target2._values = self._values[:midpoint], self._values
+        self._values = []
+
+        return target1, target2
 
     def split_alt(self):
         """
@@ -556,9 +571,15 @@ class List:
             target2 - contains other alternating values from source (List)
         -------------------------------------------------------
         """
-        # Your code here
+        target1 = List()
+        target2 = List()
 
-        return
+        while len(self._values) > 0:
+            target1.append(self._values.pop(0))
+            if len(self._values) > 0:
+                target2.append(self._values.pop(0))
+
+        return target1, target2
 
     def split_apply(self, func):
         """
@@ -614,7 +635,7 @@ class List:
             None
         -------------------------------------------------------
         """
-        # Your code here
+        self._values = list(set(source1._values + source2._values))
 
         return
 
