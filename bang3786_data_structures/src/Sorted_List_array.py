@@ -5,7 +5,7 @@ Array version of the Sorted_List ADT.
 Author:  David Brown
 ID:      123456789
 Email:   dbrown@wlu.ca
-__updated__ = "2024-02-10"
+__updated__ = "2024-02-11"
 -------------------------------------------------------
 """
 from copy import deepcopy
@@ -38,19 +38,10 @@ class Sorted_List:
         -------------------------------------------------------
         """
 
-        left, right = 0, len(self._values) - 1
-        found = False
+        found = True
 
-        while left <= right and not found:
-            middle = (left + right) // 2
-            if self._values[middle] == key:
-                found = True
-
-            elif self._values[middle] < key:
-                left = middle + 1
-
-            else:
-                right = middle - 1
+        if self._binary_search(self, key) == -1:
+            found = False
 
         return found
 
@@ -97,9 +88,25 @@ class Sorted_List:
                 the list, -1 if key is not found. (int)
         -------------------------------------------------------
         """
-        # Your code here
+        low = 0
 
-        return
+        high = len(self._values) - 1
+
+        while low < high:
+            mid = (high - low) // 2 + low
+
+            if self._values[mid] < key:
+                low = mid + 1
+
+            else:
+                high = mid
+
+        if low == high and self._values[low] == key:
+            i = low
+        else:
+            i = -1
+
+        return i
 
     def _is_valid_index(self, i):
         """
@@ -133,16 +140,15 @@ class Sorted_List:
             in source. The first occurrence of each value is preserved.
         -------------------------------------------------------
         """
-        if not self._values:
-            return
+        i = 0
 
-        unique_values = [self._values[0]]
+        while i < len(self._values) - 1:
+            if self._values[i] == self._values[i + 1]:
+                self._values[i+1].pop()
+            else:
+                i += 1
 
-        for i in range(1, len(self._values)):
-            if self._values[i] != unique_values[-1]:
-                unique_values.append(self._values[i])
-
-        self._values = unique_values
+        return self._values
 
     def combine(self, source1, source2):
         """
@@ -322,7 +328,7 @@ class Sorted_List:
         equals = True
 
         if len(self._values) != len(target._values):
-            equals = True
+            equals = False
 
         for i in range(len(self._values)):
             if self._values[i] != target._values[i]:
@@ -342,11 +348,7 @@ class Sorted_List:
         """
         assert (len(self._values) > 0), 'Cannot find maximum of an empty list'
 
-        maximum = self._values[0]
-
-        for value in self._values[1:]:
-            if value > maximum:
-                maximum = value
+        maximum = deepcopy(self._values[-1])
 
         return maximum
 
@@ -362,11 +364,7 @@ class Sorted_List:
         """
         assert (len(self._values) > 0), 'Cannot find minimum of an empty list'
 
-        minimum = self._values[0]
-
-        for value in self._values[1:]:
-            if value < minimum:
-                minimum = value
+        minimum = deepcopy(self._values[0])
 
         return minimum
 
@@ -478,9 +476,12 @@ class Sorted_List:
         target1 = Sorted_List()
         target2 = Sorted_List()
 
-        target1._values, target2._values = self._values[:midpoint], self._values[midpoint:]
+        for i in self._values[midpoint:]:
+            target1.insert(self._values.pop(0))
 
-        self._values = []
+        for i in self._values[:midpoint]:
+            target2.insert(self._values.pop(0))
+
         return target1, target2
 
     def split_alt(self):

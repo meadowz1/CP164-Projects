@@ -5,114 +5,85 @@ Assignment 5, Task 2
 Author: Mike Bangar
 ID:     169073786
 Email:   bang3786@mylaurier.ca
-__updated__ = '2024-02-10'
+__updated__ = '2024-02-11'
 -------------------------------------------------------
 """
 from Sorted_List_array import Sorted_List
 from Food_utilities import read_foods
+from copy import deepcopy
+from Food import Food
 
 fh = open("foods.txt", "r", encoding="utf-8")
 
 foods = read_foods(fh)
 
 # Create a new Sorted_List
-sorted_list = Sorted_List()
+food_list = Sorted_List()
 
 # Insert each Food object into the Sorted_List
 for food in foods:
-    sorted_list.insert(food)
+    food_list.insert(food)
 
-# Now, demonstrate each method of the Sorted_List class.
-# 1. __contains__ (key in sorted_list)
-print(foods[0] in sorted_list)
 
-# 2. __getitem__ (sorted_list[i])
-if len(sorted_list) > 0:
-    print(sorted_list[0])
-else:
-    print("The list is empty, cannot use __getitem__.")
+# Test __getitem__
+if len(food_list) > 0:
+    print("Get item:", food_list[0])
 
-# 3. __len__ (len(sorted_list))
-print(len(sorted_list))
+# Test clean
+food_list.clean()
+print("List after clean:", [str(food) for food in food_list])
 
-# 4. clean (sorted_list.clean())
-sorted_list.clean()
+# Test combine
+list1 = Sorted_List()
+list1.insert(foods[0])
+list2 = Sorted_List()
+list2.insert(foods[1])
+food_list.combine(list1, list2)
+print("List after combine:", [str(food) for food in food_list])
 
-# 5. count (sorted_list.count(key))
-print(sorted_list.count(foods[0]))
+# Test intersection
+list1 = deepcopy(food_list)
+list2 = deepcopy(food_list)
+list1.intersection(list1, list2)
+print("List after intersection:", [str(food) for food in food_list])
 
-# 6. find (sorted_list.find(key))
-print(sorted_list.find(foods[0]))
+# Test remove_front
+if not food_list.is_empty():
+    food_list.remove_front()
+print("List after remove_front:", [str(food) for food in food_list])
 
-# 7. index (sorted_list.index(key))
-print(sorted_list.index(foods[0]))
+# Test remove_many
+if len(food_list) > 0:
+    food_list.remove_many(food_list[0])
+print("List after remove_many:", [str(food) for food in food_list])
 
-# 8. intersection (sorted_list.intersection(source1, source2))
-sorted_list2 = Sorted_List()
-sorted_list2.insert(foods[1])
-sorted_list.intersection(sorted_list, sorted_list2)
+# Test split
+if len(food_list) > 0:
+    list1, list2 = food_list.split()
+    print("List 1 after split:", [str(food) for food in list1])
+    print("List 2 after split:", [str(food) for food in list2])
 
-# 9. max (sorted_list.max())
-if len(sorted_list) > 0:
-    max_value = sorted_list.max()
-    print(max_value)
-else:
-    print("The list is empty, cannot find a maximum value.")
+# Test split_alt
+if len(food_list) > 0:
+    list1, list2 = food_list.split_alt()
+    print("List 1 after split_alt:", [str(food) for food in list1])
+    print("List 2 after split_alt:", [str(food) for food in list2])
 
-# 10. min (sorted_list.min())
-if len(sorted_list) > 0:
-    min_value = sorted_list.min()
-    print(min_value)
-else:
-    print("The list is empty, cannot find a minimum value.")
-# 11. peek (sorted_list.peek())
-if len(sorted_list) > 0:
-    print(sorted_list.peek())
-else:
-    print("The list is empty, cannot peek at the first element.")
+# Test union
+list1 = Sorted_List()
+list2 = Sorted_List()
+list1.insert(foods[0])
+list2.insert(foods[1])
+food_list.union(list1, list2)
+print("List after union:", [str(food) for food in food_list])
 
-# 12. remove (sorted_list.remove(key))
-if foods[0] in sorted_list:
-    sorted_list.remove(foods[0])
-else:
-    print(f"The food {foods[0]} is not in the list.")
+# Test __eq__
+list1 = Sorted_List()
+list1.insert(foods[0])
+list2 = Sorted_List()
+list2.insert(foods[0])
+print("List1 equal List2:", list1 == list2)
 
-# 13. remove_front (sorted_list.remove_front())
-if len(sorted_list) > 0:
-    print(sorted_list.remove_front())
-else:
-    print("The list is empty, cannot remove the front element.")
-
-# 14. remove_many (sorted_list.remove_many(key))
-sorted_list.remove_many(foods[1])
-
-# 15. split (sorted_list.split())
-if len(sorted_list) > 0:
-    target1, target2 = sorted_list.split()
-else:
-    print("The list is empty, cannot split.")
-
-# 16. split_alt (sorted_list.split_alt())
-if len(sorted_list) > 0:
-    target1_alt, target2_alt = sorted_list.split_alt()
-else:
-    print("The list is empty, cannot alternate split.")
-
-# 17. split_key (sorted_list.split_key(key))
-if len(sorted_list) > 0:
-    target1_key, target2_key = sorted_list.split_key(foods[2])
-else:
-    print("The list is empty, cannot split by key.")
-
-# 18. union (sorted_list.union(source1, source2))
-if len(sorted_list) > 0 and len(sorted_list2) > 0:
-    sorted_list.union(sorted_list, sorted_list2)
-else:
-    print("One or both lists are empty, cannot perform union.")
-
-# 19. __eq__ (sorted_list == other)
-print(sorted_list == sorted_list2)
-
-# 20. __iter__ (for item in sorted_list)
-for item in sorted_list:
-    print(item)
+# Test __iter__
+for food in food_list:
+    print(food)
