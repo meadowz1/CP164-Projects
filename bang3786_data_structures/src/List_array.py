@@ -5,7 +5,7 @@ Array version of the list ADT.
 Author:  David Brown
 ID:      123456789
 Email:   dbrown@wlu.ca
-__updated__ = "2024-02-09"
+__updated__ = "2024-02-13"
 -------------------------------------------------------
 """
 from copy import deepcopy
