@@ -1,0 +1,73 @@
+"""
+-------------------------------------------------------
+Testing
+-------------------------------------------------------
+Author:  Mike Bangar
+ID:      169073786
+Email:   bang3786@mylaurier.ca
+Version: 2024-02-16
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+
+Queue1 is empty: False
+Queue2 is empty: False
+Front of Queue1: 1
+Front of Queue2: 6
+Removed from Queue1: 1
+Removed from Queue2: 6
+Elements in Queue3 after combining Queue1 and Queue2:
+2 7 3 8 4 9 5 10 
+Elements in Queue1 after splitting Queue3:
+2 3 4 5 
+Elements in Queue2 after splitting Queue3:
+7 8 9 10 
+Length of Queue1: 4
+Length of Queue2: 4
+Elements in Queue1 after appending Queue2:
+2 3 4 5 7 8 9 10 
+Is Queue1 equal to new_queue? False
+Is Queue1 equal to new_queue after appending? False
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t02
+
+Removed value from pq1: 1
+Peeked value in pq1: 3
+Is pq1 empty? False
+Length of pq1: 4
+Values in target1 after split_alt: [0, 6, 8]
+Values in target2 after split_alt: [2, 7]
+Values in target3 after split_key with key = 5: [0, 2]
+Values in target4 after split_key with key = 5: [6, 7, 8]
+Values in combined_pq after combining pq1 and target4: [3, 6, 4, 7, 5, 8, 9]
+Iterating through combined_pq:
+3
+6
+4
+7
+5
+8
+9
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t03
+
+Deque after inserting values at rear:
+1 2 3 4 5 
+Deque after inserting values at front:
+-4 -3 -2 -1 0 1 2 3 4 5 
+Removed from front: -4, Removed from rear: 5
+Peek front: -3, Peek rear: 4
+Is the deque empty? False
+Length of the deque: 8
+Are deques equal? False
+Iterating through the deque:
+-3 -2 -1 0 1 2 3 4 
+
+-------------------------------------------------------
