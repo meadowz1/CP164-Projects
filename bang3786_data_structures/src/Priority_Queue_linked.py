@@ -5,7 +5,7 @@ linked version of the Priority Queue ADT.
 Author:  David Brown
 ID:      123456789
 Email:   dbrown@wlu.ca
-__updated__ = "2024-02-16"
+__updated__ = "2024-02-17"
 -------------------------------------------------------
 """
 from copy import deepcopy
@@ -233,34 +233,54 @@ class Priority_Queue:
         -------------------------------------------------------
         """
 
-        while not source1.is_empty() or not source2.is_empty():
-            if not source1.is_empty():
-                node = source1._front
-                source1._front = node._next
-                node._next = None
-                if self._rear is None:
-                    self._front = node
-                else:
-                    self._rear._next = node
-                self._rear = node
-                source1._count -= 1
-                self._count += 1
+        self._front = None
+        self._rear = None
+        self._count = 0
 
-            if not source2.is_empty():
+        curr1 = source1._front
+        curr2 = source2._front
 
-                node = source2._front
-                source2._front = node._next
-                node._next = None
-                if self._rear is None:
-                    self._front = node
-                else:
-                    self._rear._next = node
-                self._rear = node
-                source2._count -= 1
-                self._count += 1
+        last = None
 
+        while curr1 is not None and curr2 is not None:
+            if curr1._value < curr2._value:
+                next_node = curr1
+                curr1 = curr1._next
+            else:
+                next_node = curr2
+                curr2 = curr2._next
+
+            if last is None:
+                self._front = next_node
+            else:
+                last._next = next_node
+
+            last = next_node
+            self._count += 1
+
+        remaining = curr1 if curr1 is not None else curr2
+
+        while remaining is not None:
+            next_node = remaining
+            remaining = remaining._next
+
+            if last is None:
+                self._front = next_node
+
+            else:
+                last._next = next_node
+
+            last = next_node
+            self._count += 1
+
+        self._rear = last
+
+        source1._front = None
         source1._rear = None
+        source1._count = 0
+        source2._front = None
         source2._rear = None
+        source2._count = 0
 
         return
 

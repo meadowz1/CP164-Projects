@@ -5,7 +5,7 @@ Linked version of the Deque ADT.
 Author:  David Brown
 ID:      123456789
 Email:   dbrown@wlu.ca
-__updated__ = "2024-02-16"
+__updated__ = "2024-02-17"
 -------------------------------------------------------
 """
 # Imports
@@ -119,15 +119,15 @@ class Deque:
             None
         -------------------------------------------------------
         """
+
+        node = _Deque_Node(deepcopy(value), None, self._front)
+
         if self._front is None:
-            new_node = _Deque_Node(value, None, None)
-            self._rear = new_node
-            self._front = new_node
-
+            self._rear = node
         else:
-            new_node = _Deque_Node(value, None, self._front)
-            self._front = new_node
+            self._front._prev = node
 
+        self._front = node
         self._count += 1
 
         return
