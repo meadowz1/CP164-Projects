@@ -1,0 +1,194 @@
+"""
+-------------------------------------------------------
+Testing
+-------------------------------------------------------
+Author:  Mike Bangar
+ID:      169073786
+Email:   bang3786@mylaurier.ca
+Version: 2024-03-07
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+
+Letter A: (A, .-)
+Letter B: (B, -...)
+Letter C: (C, -.-.)
+Is Letter A equal to Letter B? No
+Does Letter A come before Letter B? Yes
+Is Letter A less than or equal to Letter C? Yes
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t02
+
+Code for A: (A, .-)
+Code for B: (B, -...)
+Code for C: (C, -.-.)
+Is the Code for A equal to the Code for B? No
+Does the Code for A come before the Code for B? Yes
+Is the Code for A less than or equal to the Code for C? Yes
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t03
+
+(A, .-)
+(B, -...)
+(C, -.-.)
+(D, -..)
+(E, .)
+(F, ..-.)
+(G, --.)
+(H, ....)
+(I, ..)
+(J, .---)
+(K, -.-)
+(L, .-..)
+(M, --)
+(N, -.)
+(O, ---)
+(P, .--.)
+(Q, --.-)
+(R, .-.)
+(S, ...)
+(T, -)
+(U, ..-)
+(V, ...-)
+(W, .--)
+(X, -..-)
+(Y, -.--)
+(Z, --..)
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t04 
+
+(-, T)
+(--, M)
+(---, O)
+(--., G)
+(--.-, Q)
+(--.., Z)
+(-., N)
+(-.-, K)
+(-.--, Y)
+(-.-., C)
+(-.., D)
+(-..-, X)
+(-..., B)
+(., E)
+(.-, A)
+(.--, W)
+(.---, J)
+(.--., P)
+(.-., R)
+(.-.., L)
+(.., I)
+(..-, U)
+(..-., F)
+(..., S)
+(...-, V)
+(...., H)
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t05
+
+Original Text: HELLO WORLD
+Encoded Morse Code: .... . .-.. .-.. ---        .-- --- .-. .-.. -..
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t06
+
+Morse Code: ... --- ...
+Decoded Text: SOS
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t07
+
+"""
+DATA1 Tree:
+
+A
+ \
+  B
+   \
+    C
+     \
+      D
+       \
+        ...
+         \
+          Z
+
+
+DATA2 Tree:
+       M
+      / \
+    C     T
+   / \   / \
+  B   F J   W
+ / \ / \ / \ / \
+A  D E G I K O Q
+               / \
+              N   S
+                 / \
+                P   R
+                   / \
+                  L   U
+                       \
+                        V
+                         \
+                          X
+                           \
+                            Y
+                             \
+                              Z
+
+DATA3 Tree:
+ E
+  \
+   T
+    \
+     A
+      \
+       O
+        \
+         I
+          \
+           N
+            \
+             S
+              \
+               ...
+                 \
+                  Z
+"""
+
+"""
+Which of these three is the most inefficient tree? Why?
+Which of these is likely to be the most efficient tree?
+How could you (theoretically) figure that out?
+
+A:
+DATA1 is likely the most inefficient BST, since it has the height of the amount of elements
+that are in the list.
+
+DATA2 is likely the most efficient BST, since the data is arranged to be split properly.
+
+ To figure out which is most efficient, you would calculate the height of the BST that each dataset produces.
+ The tree with the height closest to the theoretical minimum height, which is log2(n) where n is the number of nodes,
+ would be the most efficient. The balanced BST allows for search operations to be performed in O(log n) time,
+ compared to O(n) for a completely unbalanced tree.
+"""
+
+-------------------------------------------------------
