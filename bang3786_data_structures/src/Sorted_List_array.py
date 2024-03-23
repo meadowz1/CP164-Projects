@@ -5,7 +5,7 @@ Array version of the Sorted_List ADT.
 Author:  David Brown
 ID:      123456789
 Email:   dbrown@wlu.ca
-__updated__ = "2024-02-11"
+__updated__ = "2024-03-22"
 -------------------------------------------------------
 """
 from copy import deepcopy
@@ -38,12 +38,9 @@ class Sorted_List:
         -------------------------------------------------------
         """
 
-        found = True
+        i = self._binary_search(key)
 
-        if self._binary_search(self, key) == -1:
-            found = False
-
-        return found
+        return i != -1
 
     def __getitem__(self, i):
         """
@@ -103,6 +100,7 @@ class Sorted_List:
 
         if low == high and self._values[low] == key:
             i = low
+
         else:
             i = -1
 
