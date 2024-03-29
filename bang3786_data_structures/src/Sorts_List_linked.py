@@ -5,7 +5,7 @@ Linked versions of various sorts. Implemented on linked Lists.
 Author:  David Brown
 ID:      999999999
 Email:   dbrown@wlu.ca
-__updated__ = "2024-03-21"
+__updated__ = "2024-03-29"
 -------------------------------------------------------
 """
 # pylint: disable=protected-access
@@ -384,3 +384,55 @@ class Sorts:
             else:
                 equals._move_front_to_rear(source)
         return lesser, equals, greater
+
+    @staticmethod
+    def radix_sort(a):
+        """
+        -------------------------------------------------------
+        Performs a base 10 radix sort.
+        Use: radix_sort(a)
+        -------------------------------------------------------
+        Parameters:
+            a - a List of base 10 integers (List)
+        Returns:
+            None
+        -------------------------------------------------------
+        """
+
+        buckets = [[], [], [], [], [], [], [], [], [], []]
+        maxe = 0
+        current = a._front
+
+        while current is not None:
+            num_length = len(str(current._value))
+
+            if num_length > maxe:
+                maxe = num_length
+
+            current = current._next
+
+        current = a._front
+
+        for i in range(1, maxe + 1):
+            while current is not None:
+                num_lgth = len(str(current._value))
+
+                if num_lgth >= i:
+                    digit = str(current._value)[-i]
+                    digit = int(digit)
+                    buckets[digit].append(current._value)
+
+                else:
+                    buckets[0].append(current._value)
+
+                a.remove(current._value)
+                current = current._next
+
+            for bucket in buckets:
+                for x in bucket:
+                    a.append(x)
+
+            current = a._front
+            buckets = [[], [], [], [], [], [], [], [], [], []]
+
+        return

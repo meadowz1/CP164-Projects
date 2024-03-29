@@ -5,7 +5,7 @@ Array versions of various sorts.
 Author:  David Brown
 ID:      999999999
 Email:   dbrown@wlu.ca
-__updated__ = "2024-03-21"
+__updated__ = "2024-03-29"
 -------------------------------------------------------
 """
 # Imports
@@ -27,6 +27,90 @@ class Sorts:
     swaps = 0  # Tracks swaps performed.
 
     # The Sorts
+
+    @staticmethod
+    def radix_sort(a):
+        """
+        -------------------------------------------------------
+        Performs a base 10 radix sort.
+        Use: Sorts.radix_sort(a)
+        -------------------------------------------------------
+        Parameters:
+            a - an array of base 10 integers (list)
+        Returns:
+            None
+        -------------------------------------------------------
+        """
+
+        lists = [[], [], [], [], [], [], [], [], [], []]
+        maxe = 0
+
+        for each in a:
+            length = len(str(each))
+
+            if length > maxe:
+                maxe = length
+
+        for i in range(1, maxe + 1):
+            for value in a:
+                length2 = len(str(value))
+
+                if length2 >= i:
+                    number = str(value)[-i]
+                    number = int(number)
+                    lists[number].append(value)
+
+                else:
+                    lists[0].append(value)
+
+            a.clear()
+
+            for val in lists:
+                for numm in val:
+                    a.append(numm)
+
+            lists = [[], [], [], [], [], [], [], [], [], []]
+
+        return
+
+    @staticmethod
+    def gnome_sort(a):
+        """
+        -------------------------------------------------------
+        Sorts an array using the Gnome Sort algorithm.
+        Use: gnome_sort(a)
+        -------------------------------------------------------
+        Parameters:
+            a - an array of comparable elements (list)
+        Returns:
+            None
+        -------------------------------------------------------
+        """
+
+        gnome = 0
+        sortdd = False
+
+        while not sortdd:
+            if gnome == 0:
+
+                if gnome >= len(a) - 1:
+                    sortdd = True
+
+                else:
+                    gnome += 1
+
+            elif a[gnome - 1] <= a[gnome]:
+                if gnome == len(a) - 1:
+                    sortdd = True
+
+                else:
+                    gnome += 1
+
+            elif a[gnome - 1] > a[gnome]:
+                Sorts._swap(a, gnome, gnome - 1)
+                gnome -= 1
+
+        return
 
     @staticmethod
     def insertion_sort(a):
@@ -711,3 +795,4 @@ class Sorts:
 
         a[i] = a[j]
         return
+
